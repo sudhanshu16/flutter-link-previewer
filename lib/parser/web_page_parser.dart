@@ -88,8 +88,7 @@ class WebPageParser {
     var imageSrc = "";
     if (images.length > 0) {
       imageSrc = images[0].attributes["src"];
-
-      if (!imageSrc.startsWith("http")) {
+      if (!imageSrc.startsWith("http") && !imageSrc.startsWith("data:")) {
         imageSrc = "http://" + _extractHost(url) + imageSrc;
       }
     }
